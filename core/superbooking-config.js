@@ -6,6 +6,12 @@ window.ASTRANOV_CENTRAL_DB = {
   useCustomDomain: false,
   supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxrb2F0cmtodWlnZG9sbmpzYmllIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4ODIwOTIsImV4cCI6MjA5NDQ1ODA5Mn0.qf6Kg93YLJ0coTdVQa4baU0ppOdFY5WkmVzMvEV6ejI',
   profilesTable: 'profiles',
+  sites: {
+    globe: 'astranov.eu',
+    coin: 'coin.astranov.eu',
+    auditors: 'auditors.astranov.eu',
+    yachts: 'yachts.astranov.eu',
+  },
 };
 
 window.ASTRANOV_SITES_DEFAULTS = {
