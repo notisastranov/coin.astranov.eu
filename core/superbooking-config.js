@@ -1,17 +1,13 @@
-/* Astranov Sites — central database (all *.astranov.eu tenants) */
+/* ONE DATABASE — lkoatrkhuigdolnjsbie · all *.astranov.eu tenants · no legacy split */
 window.ASTRANOV_CENTRAL_DB = {
+  ONE_DATABASE: true,
   supabaseRef: 'lkoatrkhuigdolnjsbie',
   supabaseUrl: 'https://lkoatrkhuigdolnjsbie.supabase.co',
   customUrl: 'https://api.astranov.eu',
   useCustomDomain: false,
   supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxrb2F0cmtodWlnZG9sbmpzYmllIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4ODIwOTIsImV4cCI6MjA5NDQ1ODA5Mn0.qf6Kg93YLJ0coTdVQa4baU0ppOdFY5WkmVzMvEV6ejI',
   profilesTable: 'profiles',
-  sites: {
-    globe: 'astranov.eu',
-    coin: 'coin.astranov.eu',
-    auditors: 'auditors.astranov.eu',
-    yachts: 'yachts.astranov.eu',
-  },
+  tenants: ['astranov.eu', 'coin.astranov.eu', 'auditors.astranov.eu', 'yachts.astranov.eu'],
 };
 
 window.ASTRANOV_SITES_DEFAULTS = {
@@ -29,9 +25,10 @@ function applyCentralDatabase(config) {
   if (!c) return config;
   return {
     ...config,
-    database: config.database || 'central',
+    database: 'central',
     supabaseUrl: config.supabaseUrl || astranovCentralSupabaseUrl(),
     supabaseAnonKey: config.supabaseAnonKey || c.supabaseAnonKey,
+    supabaseRef: c.supabaseRef,
     tables: { profiles: c.profilesTable, ...(config.tables || {}) },
   };
 }
